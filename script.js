@@ -26,6 +26,7 @@ const game= () =>{
     let computerScore = 0;
     alert("Let's start the game");
     for(let i = 0; i<5; i++){
+        console.log("Playing Round: ",i+1);
         const playRound = (playerSelection, computerSelection) => {
             if (playerSelection === computerSelection) {
                 return "Tie the game";
@@ -59,6 +60,10 @@ const game= () =>{
                     computerScore++;
                     return "You lose! Scissors beats Paper";
                 }
+            }
+            else{
+                i--;
+                return "Invaild Input";
             }
         };  
         const playerChoice = getPlayerChoice();
